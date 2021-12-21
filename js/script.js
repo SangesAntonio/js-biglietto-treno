@@ -21,4 +21,6 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 const userKilometers = prompt('Quanti chilometri vuoi percorrere?', '70');
 console.log(userKilometers);
 
-
+//!2-Chiedere all'utente l'età
+const userAge = prompt('Quanti anni hai?', '20');
+console.log(userAge);
