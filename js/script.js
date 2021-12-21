@@ -17,16 +17,32 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 4-Stampare il risultato con massimo due decimali */
 
 
-//!1-Chiedere all'utente il numero di chilometri
-const userKilometers = prompt('Quanti chilometri vuoi percorrere?', '70');
+//! 1-Chiedere all'utente il numero di chilometri
+const userKilometers = parseInt(prompt('Quanti chilometri vuoi percorrere?', '70'));
 console.log(userKilometers);
 
-//!2-Chiedere all'utente l'età
-const userAge = prompt('Quanti anni hai?', '20');
+//! 2-Chiedere all'utente l'età
+const userAge = parseInt(prompt('Quanti anni hai?', '19'));
 console.log(userAge);
 
-//!3-Calcolare prezzo del biglietto
+//! 3-Calcolare prezzo del biglietto
+let ticketPrice;
 
-let ticketPrice = userKilometers * 0.21 ;
+if((userAge > 18) && (userAge < 65)){
+    ticketPrice = userKilometers * 0.21 ;
+}
 console.log(ticketPrice);
 
+//! 3a-calcolare il prezzo del biglietto se l'età è sotto i 18 anni -20%
+let discount18 = (ticketPrice / 100) * 20;
+let discount65 = (ticketPrice / 100) * 40;
+let ticketPriceDiscount;
+
+//calcolo dello sconto
+if(userAge < 18){
+    ticketPriceDiscount = ticketPrice - discount18;
+} else if (userAge > 65){
+    ticketPriceDiscount = ticketPrice - discount65;
+}
+
+console.log(ticketPriceDiscount);
