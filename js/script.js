@@ -24,3 +24,9 @@ console.log(userKilometers);
 //!2-Chiedere all'utente l'età
 const userAge = prompt('Quanti anni hai?', '20');
 console.log(userAge);
+
+//!3-Calcolare prezzo del biglietto
+
+let ticketPrice = userKilometers * 0.21 ;
+console.log(ticketPrice);
+
