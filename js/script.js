@@ -19,23 +19,25 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 
 //! 1-Chiedere all'utente il numero di chilometri
 const userKilometers = parseInt(prompt('Quanti chilometri vuoi percorrere?', '70'));
-document.getElementById('chilometri').innerText = `Distanza percorsa: ${userKilometers}km`;
 
+if(isNaN(userKilometers)){
+    alert('Non è un numero');
+}
+document.getElementById('chilometri').innerText = `Distanza percorsa: ${userKilometers}km`;
 console.log(`userKilometers:  ${userKilometers}`);
 
 //! 2-Chiedere all'utente l'età
 const userAge = parseInt(prompt('Quanti anni hai?', '19'));
-
+if(isNaN(userAge)){
+    alert('Non è un numero');
+}
 document.getElementById('eta').innerText = `La tua età: ${userAge}anni`;
-
 console.log(`userAge:  ${userAge}`);
 
 //! 3-Calcolare prezzo del biglietto
-let ticketPrice = userKilometers * 0.21 ;
+let ticketPrice = userKilometers * 0.21;
 
-document.getElementById('costo').innerText = `Costo Totale: ${ticketPrice}$`;
-
-//! 3a-calcolare il prezzo del biglietto se l'età richiede uno sconto
+//! calcolare il prezzo del biglietto se l'età richiede uno sconto
 
 //calcolo dello sconto
 if(userAge < 18){
@@ -51,3 +53,6 @@ if(userAge < 18){
 }
 
 console.log(`ticketprice:  ${ticketPrice}`);
+
+//! Stampa il prezzo del biglietto 
+document.getElementById('costo').innerText = `Costo Totale: ${ticketPrice}$`;
